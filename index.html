@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/duamilab/duamilab.github.io/13b38a626d9d1f8e2c19a2178587ee4d3209321a/Favicon.svg">
-<title>Duami Lab — Fatto a mano senza confini creativi </title>
+<title>Duami Lab — Fatto a mano senza confini creativi</title>
 <meta name="description" content="Duami Lab — creazioni fatte a mano: cucito, ricamo, ceramiche e kokedama. Regali unici e personalizzati.">
 <link rel="canonical" href="https://www.duamilab.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,373 +12,282 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Kaisei+Opti&family=Inter:wght@400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --blue:   #3B82F6;
+    --blue:     #3B82F6;
     --darkblue: #1D6FD8;
-    --yellow: #F59E0B;
-    --red:    #DC2626;
-    --green:  #059669;
-    --purple: #A78BFA;
-    --dark:   #252525;
-    --black:  #000;
-    --bg:     #ffffff;
-    --light:  #F7F7F7;
-    --border: #E8E8E8;
+    --yellow:   #F59E0B;
+    --red:      #DC2626;
+    --green:    #059669;
+    --purple:   #A78BFA;
+    --dark:     #252525;
+    --black:    #000;
+    --bg:       #ffffff;
+    --light:    #F7F7F7;
+    --border:   #E8E8E8;
   }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--dark); overflow-x:hidden; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; font-size: 18px; background: var(--bg); color: var(--dark); overflow-x: hidden; }
+  p { font-size: 1rem; line-height: 1.75; color: #444; }
 
   /* ── NAV ── */
   nav {
-    position:fixed; top:0; left:0; right:0; z-index:200;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:0.9rem 2.5rem;
-    background:rgba(255,255,255,0.94);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--border);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.9rem 2.5rem;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
   }
-  .nav-logo { display:flex; align-items:center; gap:.7rem; }
-  .nav-logo img { height:26px; display:block; }
-  .nav-logo a { text-decoration:none; display:flex; align-items:center; gap:1.2rem; }
-  nav ul { list-style:none; display:flex; gap:2rem; }
-  nav ul a { text-decoration:none; color:var(--dark); font-size:0.86rem; font-weight:500; letter-spacing:0.04em; transition:color .2s; }
-  nav ul a:hover { color:var(--red); }
-  .nav-cta { padding:0.55rem 1.3rem; border-radius:100px; background:var(--dark); color:#fff !important; font-size:0.82rem !important; transition:background .2s !important; }
-  .nav-cta:hover { background:var(--black) !important; }
+  .nav-logo { display: flex; align-items: center; gap: .7rem; }
+  .nav-logo img { height: 26px; display: block; }
+  .nav-logo a { text-decoration: none; display: flex; align-items: center; gap: 1.2rem; }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a { text-decoration: none; color: var(--dark); font-size: 0.86rem; font-weight: 500; letter-spacing: 0.04em; transition: color .2s; }
+  nav ul a:hover { color: var(--red); }
+  .nav-cta { padding: 0.55rem 1.3rem; border-radius: 100px; background: var(--dark); color: #fff !important; font-size: 0.82rem !important; transition: background .2s !important; }
+  .nav-cta:hover { background: var(--black) !important; }
 
   /* ── HERO ── */
   #hero {
-    min-height:72vh;
-    display:flex; align-items:center; justify-content:center;
-    flex-direction:column; text-align:center;
-    padding:7rem 2rem 3.5rem;
-    position:relative; overflow:hidden; background:#fff;
+    min-height: 72vh;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; text-align: center;
+    padding: 7rem 2rem 3.5rem;
+    position: relative; overflow: hidden; background: #fff;
   }
-  .hero-shapes { position:absolute; inset:0; pointer-events:none; z-index:0; }
-
-  /* Geometric shapes with sharp edges, echoing the logo letterforms */
-  .hero-shapes svg {
-    position:absolute; opacity:.08;
-    animation:geoFloat 10s ease-in-out infinite;
-  }
-  /* D shape — top-left, blue, large */
-  .geo-d {
-    width:260px; top:-60px; left:-60px;
-    animation-delay:0s; fill:var(--blue);
-  }
-  /* U shape — bottom-left, yellow */
-  .geo-u {
-    width:200px; bottom:-30px; left:3%;
-    animation-delay:-2.5s; fill:var(--yellow);
-  }
-  /* A shape (triangle) — top-right, red */
-  .geo-a {
-    width:220px; top:0px; right:-40px;
-    animation-delay:-5s; fill:var(--red);
-  }
-  /* M shape — bottom-right, green */
-  .geo-m {
-    width:200px; bottom:-20px; right:4%;
-    animation-delay:-7s; fill:var(--green);
-  }
-  /* I shape (rect) — mid-left, purple */
-  .geo-i {
-    width:60px; top:40%; left:5%;
-    animation-delay:-3.5s; fill:var(--purple);
-  }
-  /* small square — mid-right, yellow */
-  .geo-sq {
-    width:90px; top:35%; right:7%;
-    animation-delay:-1s; fill:var(--yellow);
-  }
+  .hero-shapes { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+  .hero-shapes svg { position: absolute; opacity: .08; animation: geoFloat 10s ease-in-out infinite; }
+  .geo-d { width: 260px; top: -60px;  left: -60px; animation-delay: 0s;    fill: var(--blue); }
+  .geo-u { width: 200px; bottom: -30px; left: 3%;  animation-delay: -2.5s; fill: var(--yellow); }
+  .geo-a { width: 220px; top: 0;      right: -40px; animation-delay: -5s;  fill: var(--red); }
+  .geo-m { width: 200px; bottom: -20px; right: 4%; animation-delay: -7s;   fill: var(--green); }
+  .geo-i { width: 60px;  top: 40%;   left: 5%;     animation-delay: -3.5s; fill: var(--purple); }
 
   @keyframes geoFloat {
-    0%,100% { transform:translateY(0) rotate(0deg); }
-    50%      { transform:translateY(-18px) rotate(4deg); }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%       { transform: translateY(-18px) rotate(4deg); }
   }
+  @keyframes bounce  { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+  @keyframes fadeUp  { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
-  .hero-logo-text { display:flex; flex-direction:row; align-items:center; gap:.3rem; }
-  .hero-logo-duami { font-family:'Kaisei Opti', serif; font-weight:400; font-size:1.15rem; letter-spacing:0.3125rem; color:var(--dark); text-transform:uppercase; line-height:normal; }
-  .hero-logo-lab { font-family:'Inter', sans-serif; font-weight:400; font-size:0.875rem; letter-spacing:0.3125rem; color:#888; text-transform:uppercase; line-height:normal; position:relative; top:0.08em;}
+  .hero-logo-text {
+    display: flex; flex-direction: row; align-items: center; gap: .3rem;
+    margin-bottom: 1.5rem; position: relative; z-index: 1;
+  }
+  .hero-logo-duami { font-family: 'Kaisei Opti', serif; font-weight: 400; font-size: 1.15rem; letter-spacing: 0.3125rem; color: var(--dark); text-transform: uppercase; }
+  .hero-logo-lab   { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.875rem; letter-spacing: 0.3125rem; color: #888; text-transform: uppercase; position: relative; top: 0.08em; }
 
   .hero-h1 {
-    font-family:'Playfair Display',serif;
-    font-size:clamp(2.2rem,5.5vw,4rem); line-height:1.12;
-    max-width:720px; position:relative;z-index:1;
-    animation:fadeUp .9s ease both;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5.5vw, 4rem); line-height: 1.12;
+    max-width: 720px; position: relative; z-index: 1;
+    animation: fadeUp .9s ease both;
   }
-  .hero-h1 em { font-style:italic; }
   .hero-sub {
-    margin-top:1.1rem; font-size:1rem; color:#555;
-    max-width:480px; line-height:1.7;
-    position:relative;z-index:1; animation:fadeUp .9s .18s ease both;
+    margin-top: 1.1rem; font-size: 1rem; color: #555; max-width: 480px; line-height: 1.7;
+    position: relative; z-index: 1; animation: fadeUp .9s .18s ease both;
   }
   .hero-cta {
-    margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;
-    position:relative;z-index:1; animation:fadeUp .9s .34s ease both;
+    margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+    position: relative; z-index: 1; animation: fadeUp .9s .34s ease both;
   }
   .hero-scroll {
-    position:absolute; bottom:1.8rem; left:50%; transform:translateX(-50%);
-    z-index:1; display:flex; flex-direction:column; align-items:center; gap:.4rem;
-    color:#aaa; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
-    animation:fadeUp .9s .5s ease both;
+    position: absolute; bottom: 1.8rem; left: 50%; transform: translateX(-50%);
+    z-index: 1; display: flex; flex-direction: column; align-items: center; gap: .4rem;
+    color: #aaa; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+    animation: fadeUp .9s .5s ease both;
   }
-  .hero-scroll .arrow { animation:bounce 1.6s infinite; }
-  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
-  @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+  .hero-scroll .arrow { animation: bounce 1.6s infinite; }
 
-  .btn { padding:.85rem 2rem; border-radius:100px; font-size:.88rem; font-weight:500; text-decoration:none; cursor:pointer; border:2px solid transparent; transition:all .22s; letter-spacing:.03em; }
-  .btn-primary { background:var(--dark); color:#fff; }
-  .btn-primary:hover { background:var(--black); border-color:var(--black); transform:translateY(-2px); }
-  .btn-outline { border-color:var(--dark); color:var(--dark); }
-  .btn-outline:hover { background:var(--dark); color:#fff; transform:translateY(-2px); }
+  .btn { padding: .85rem 2rem; border-radius: 100px; font-size: .88rem; font-weight: 500; text-decoration: none; cursor: pointer; border: 2px solid transparent; transition: all .22s; letter-spacing: .03em; }
+  .btn-primary { background: var(--dark); color: #fff; }
+  .btn-primary:hover { background: var(--black); border-color: var(--black); transform: translateY(-2px); }
+  .btn-outline { border-color: var(--dark); color: var(--dark); }
+  .btn-outline:hover { background: var(--dark); color: #fff; transform: translateY(-2px); }
 
   /* ── SECTIONS ── */
-  section { padding:5.5rem 2rem; }
-  .container { max-width:1140px; margin:0 auto; }
-  .label { font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.5rem; }
-  .sec-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,3.5vw,2.7rem); line-height:1.2; margin-bottom:1rem; }
-  .sec-body { font-size:1.3rem; line-height:1.75; color:#444; max-width:540px; }
-  body { font-size: 18px; }
-  p { font-size: 1rem; line-height: 1.75; color: #444; }
+  section { padding: 5.5rem 2rem; }
+  .container { max-width: 1140px; margin: 0 auto; }
+  .label    { font-size: .7rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--red); margin-bottom: .5rem; }
+  .sec-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.7rem); line-height: 1.2; margin-bottom: 1rem; }
+  .sec-body  { font-size: 1.3rem; line-height: 1.75; color: #444; max-width: 540px; }
+
   /* ── CHI SIAMO ── */
-  #chi-siamo { background:#fff; }
-  .chi-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-  .chi-photo { border-radius:28px; overflow:hidden; aspect-ratio:4/5; background:var(--light); display:flex; align-items:center; justify-content:center; }
-  .chi-photo-placeholder { display:flex; flex-direction:column; align-items:center; gap:1rem; color:#aaa; font-size:.9rem; text-align:center; padding:2rem; }
-  .chi-photo-placeholder span { font-size:3.5rem; }
-  .chi-specs { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
-  .spec-pill { border-radius:0px; padding:1.1rem 1.4rem; display:flex; align-items:center; gap:.7rem; font-size:.88rem; font-weight:500; }
-  .chi-specs { display: flex; gap: .75rem; flex-wrap: wrap; }
-.spec-pill {
-  display: flex; align-items: center;
-  padding: .6rem 1.1rem;
-  font-family: 'DM Sans', sans-serif; font-size: .78rem; font-weight: 700;
-  letter-spacing: .08em; text-transform: uppercase;
-  border-radius: 4px; color: #fff;
-  transition: transform .2s, opacity .2s;
-}
-.spec-pill:hover { transform: translateY(-2px); opacity: .88; }
-.sp5 { background: #2979FF; }           /* Ricamo — blu */
-.sp6 { background: #FFC303; color: #1a1a1a; } /* Cucito — giallo */
-.sp7 { background: #069670; }           /* Ceramiche — verde scurito */
-.sp8 { background: #7C4FD4; }           /* Kokedama — lilla scurito */
-  .spec-pill .spe { font-size:1.1rem; }
+  #chi-siamo { background: #fff; }
+  .chi-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .chi-photo { border-radius: 28px; overflow: hidden; aspect-ratio: 4/5; background: var(--light); }
+  .chi-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .chi-specs { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 2rem; }
+  .spec-pill {
+    display: flex; align-items: center;
+    padding: .6rem 1.1rem;
+    font-family: 'DM Sans', sans-serif; font-size: .78rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    border-radius: 4px; color: #fff;
+    transition: transform .2s, opacity .2s;
+  }
+  .spec-pill:hover { transform: translateY(-2px); opacity: .88; }
+  .sp5 { background: #2979FF; }
+  .sp6 { background: #FFC303; color: #1a1a1a; }
+  .sp7 { background: #069670; }
+  .sp8 { background: #7C4FD4; }
 
   /* ── PRODOTTI ── */
-  #prodotti { background:var(--light); }
-  .prodotti-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-top:2.5rem; }
-  .prod-card { background:#fff; border-radius:24px; overflow:hidden; transition:transform .3s, box-shadow .3s;}
-  .prod-card:hover { transform:translateY(-8px); box-shadow:0 24px 48px rgba(0,0,0,.09); }
-  /*.prod-img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }*/
-  .prod-img {
-    width: 100%;
-    height: 350px;        /* altezza fissa — cambia il valore come preferisci */
-    object-fit: cover;    /* taglia automaticamente mantenendo le proporzioni */
-    object-position: center; /* centra il taglio */
-    display: block;
-  }
-  .prod-body p {font-size: 1rem; line-height: 1.75; color: #444;}
-  /* Ricamo placeholder card */
+  #prodotti { background: var(--light); }
+  .prodotti-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+  .prod-card { background: #fff; border-radius: 24px; overflow: hidden; transition: transform .3s, box-shadow .3s; }
+  .prod-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(0,0,0,.09); }
+  .prod-img { width: 100%; height: 350px; object-fit: cover; object-position: center; display: block; }
+  .prod-img-bottom { object-position: bottom; }
   .prod-img-placeholder {
-    width:100%;  height: 350px; display:flex; flex-direction:column;
-    align-items:center; justify-content:center; gap:1rem;
-    background:linear-gradient(135deg, #FEF3C7 0%, #EDE9FE 100%);
+    width: 100%; height: 350px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
+    background: linear-gradient(135deg, #FEF3C7 0%, #EDE9FE 100%);
   }
-  .prod-img-placeholder .pi-emoji { font-size:4rem; }
-  .prod-img-placeholder .pi-label { font-family:'Playfair Display',serif; font-size:1rem; color:#666; font-style:italic; }
-  .prod-body { padding:1.6rem 1.8rem; }
-  .prod-cat { font-size:.68rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; margin-bottom:.5rem; }
-  .pc-blue { color:var(--blue); } .pc-yellow { color:#B45309; }
-  .pc-green { color:var(--green); } .pc-purple { color:#7C3AED; }
-  .pc-red { color:var(--red); }
-  .prod-body h3 { font-family:'Playfair Display',serif; font-size:1.2rem; margin-bottom:.5rem; }
-  .prod-body p { font-size:.86rem; color:#555; line-height:1.6; }
-  .prod-tag { display:inline-block; margin-top:.9rem; font-size:.7rem; font-weight:500; letter-spacing:.06em; text-transform:uppercase; padding:.28rem .85rem; border-radius:8px; background:var(--light); color:#666; border:1px solid var(--border); }
+  .prod-img-placeholder .pi-emoji { font-size: 4rem; }
+  .prod-img-placeholder .pi-label { font-family: 'Playfair Display', serif; font-size: 1rem; color: #666; font-style: italic; }
+  .prod-img-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .prod-body   { padding: 1.6rem 1.8rem; }
+  .prod-body p { font-size: .86rem; color: #555; line-height: 1.6; }
+  .prod-cat    { font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; margin-bottom: .5rem; }
+  .pc-blue   { color: var(--blue); }
+  .pc-yellow { color: #B45309; }
+  .pc-green  { color: var(--green); }
+  .pc-purple { color: #7C3AED; }
+  .pc-red    { color: var(--red); }
+  .prod-body h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: .5rem; }
+  .prod-tag { display: inline-block; margin-top: .9rem; font-size: .7rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; padding: .28rem .85rem; border-radius: 8px; background: var(--light); color: #666; border: 1px solid var(--border); }
 
   /* ── IG CTA ── */
-  #ig-cta { background:var(--dark); color:#fff; padding:4.5rem 2rem; text-align:center; position:relative; overflow:hidden; }
-  /*.ig-glow { position:absolute; inset:0; background:radial-gradient(ellipse at 20% 50%,rgba(59,130,246,.22) 0%,transparent 55%),radial-gradient(ellipse at 80% 50%,rgba(167,139,250,.18) 0%,transparent 55%); }*/
-  #ig-cta .label { color:var(--purple); position:relative;z-index:1; }
-  #ig-cta .sec-title { color:#fff; max-width:600px; margin:0 auto .8rem; position:relative;z-index:1; }
-  #ig-cta p { color:#aaa; max-width:460px; margin:0 auto 2rem; position:relative;z-index:1; }
-  .ig-btn { display:inline-flex; align-items:center; gap:.6rem; background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color:#fff; padding:.9rem 2.2rem; border-radius:100px; font-weight:800; text-decoration:none; font-size:.95rem; transition:transform .2s, opacity .2s; position:relative;z-index:1; }
-  .ig-btn:hover { transform:translateY(-3px); opacity:.9; }
-  .ig-btn svg { width:20px;height:20px;fill:#fff; }
-
+  #ig-cta { background: var(--dark); color: #fff; padding: 4.5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+  #ig-cta .label     { color: var(--purple); position: relative; z-index: 1; }
+  #ig-cta .sec-title { color: #fff; max-width: 600px; margin: 0 auto .8rem; position: relative; z-index: 1; }
+  #ig-cta p { color: #aaa; max-width: 460px; margin: 0 auto 2rem; position: relative; z-index: 1; }
+  .ig-btn {
+    display: inline-flex; align-items: center; gap: .6rem;
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    color: #fff; padding: .9rem 2.2rem; border-radius: 100px;
+    font-weight: 800; text-decoration: none; font-size: .95rem;
+    transition: transform .2s, opacity .2s; position: relative; z-index: 1;
+  }
+  .ig-btn:hover { transform: translateY(-3px); opacity: .9; }
+  .ig-btn svg { width: 20px; height: 20px; fill: #fff; }
 
   /* ── FEED ── */
-  #feed { background:#fff; }
-  .feed-top { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:2rem; flex-wrap:wrap; gap:1rem; }
-  .feed-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
-  .feed-post { aspect-ratio:1; border-radius:16px; overflow:hidden; position:relative; cursor:pointer; background:var(--light); }
-  .feed-post img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s; }
-  .feed-post:hover img { transform:scale(1.07); }
-  .feed-overlay { position:absolute; inset:0; background:rgba(0,0,0,.48); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .3s; border-radius:16px; }
-  .feed-post:hover .feed-overlay { opacity:1; }
-  .feed-overlay span { color:#fff; font-size:.8rem; font-weight:500; letter-spacing:.06em; }
+  #feed { background: #fff; }
+  .feed-top { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+  .feed-post { aspect-ratio: 1; border-radius: 16px; overflow: hidden; position: relative; cursor: pointer; background: var(--light); }
+  .feed-post img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+  .feed-post:hover img { transform: scale(1.07); }
+  .feed-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.48); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .3s; border-radius: 16px; }
+  .feed-post:hover .feed-overlay { opacity: 1; }
+  .feed-overlay span { color: #fff; font-size: .8rem; font-weight: 500; letter-spacing: .06em; }
 
   /* ── PROCESSO ── */
-  #processo { background:var(--light); }
+  #processo { background: var(--light); }
   .steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  margin-top: 3rem;
-}
-.step-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.8rem 1.6rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  position: relative;
-  overflow: hidden;
-  transition: box-shadow .25s, transform .25s;
-}
-.step-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  opacity: .35;
-  transition: opacity .25s;
-}
-.step-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,.07);
-  transform: translateY(-3px);
-}
-.step-card:hover::before { opacity: 1; }
-.step-card:nth-child(1)::before { background: var(--blue); }
-.step-card:nth-child(2)::before { background: var(--green); }
-.step-card:nth-child(3)::before { background: var(--red); }
-.step-card:nth-child(4)::before { background: var(--purple); }
-.step-num {
-  font-family: 'Space Mono', monospace;
-  font-size: .62rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #ccc;
-  transition: color .25s;
-}
-.step-card:nth-child(1):hover .step-num { color: var(--blue); }
-.step-card:nth-child(2):hover .step-num { color: var(--green); }
-.step-card:nth-child(3):hover .step-num { color: var(--red); }
-.step-card:nth-child(4):hover .step-num { color: var(--purple); }
-.step-icon {
-  width: 38px; height: 38px;
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem;
-}
-.step-card:nth-child(1) .step-icon { background: var(--blue); }
-.step-card:nth-child(2) .step-icon { background: var(--green); }
-.step-card:nth-child(3) .step-icon { background: var(--red); }
-.step-card:nth-child(4) .step-icon { background: var(--purple); }
-.step-card h3 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 900;
-  color: var(--dark);
-  text-align: left;
-}
-.step-card p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 1rem;
-  color: #888;
-  line-height: 1.75;
-  text-align: left;
-}
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-top: 3rem;
+  }
+  .step-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem 1.6rem 2rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    position: relative; overflow: hidden;
+    transition: box-shadow .25s, transform .25s;
+  }
+  .step-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; opacity: .35; transition: opacity .25s;
+  }
+  .step-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.07); transform: translateY(-3px); }
+  .step-card:hover::before { opacity: 1; }
+  .step-card:nth-child(1)::before { background: var(--blue); }
+  .step-card:nth-child(2)::before { background: var(--green); }
+  .step-card:nth-child(3)::before { background: var(--red); }
+  .step-card:nth-child(4)::before { background: var(--purple); }
+  .step-num { font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: #ccc; transition: color .25s; }
+  .step-card:nth-child(1):hover .step-num { color: var(--blue); }
+  .step-card:nth-child(2):hover .step-num { color: var(--green); }
+  .step-card:nth-child(3):hover .step-num { color: var(--red); }
+  .step-card:nth-child(4):hover .step-num { color: var(--purple); }
+  .step-icon { width: 38px; height: 38px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+  .step-card:nth-child(1) .step-icon { background: var(--blue); }
+  .step-card:nth-child(2) .step-icon { background: var(--green); }
+  .step-card:nth-child(3) .step-icon { background: var(--red); }
+  .step-card:nth-child(4) .step-icon { background: var(--purple); }
+  .step-card h3 { font-size: 1.3rem; font-weight: 900; color: var(--dark); }
+  .step-card p  { font-size: 1rem; color: #888; line-height: 1.75; }
 
   /* ── RECENSIONI ── */
-  #recensioni { background:#fff; }
-  .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
-  .testi { background:var(--light); border-radius:20px; padding:2rem; }
-  .stars { color:var(--yellow); margin-bottom:.8rem; }
-  .testi blockquote { font-size:.9rem; line-height:1.7; color:#444; font-style:italic; margin-bottom:1rem; }
-  .testi cite { font-size:.8rem; color:#777; font-weight:500; }
+  #recensioni { background: #fff; }
+  .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+  .testi { background: var(--light); border-radius: 20px; padding: 2rem; }
+  .stars { color: var(--yellow); margin-bottom: .8rem; }
+  .testi blockquote { font-size: .9rem; line-height: 1.7; color: #444; font-style: italic; margin-bottom: 1rem; }
+  .testi cite { font-size: .8rem; color: #777; font-weight: 500; }
 
   /* ── CONTATTI ── */
-  #contatti { background:var(--light); }
-  .contatti-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
-  .c-info { display:flex; flex-direction:column; gap:1.3rem; margin-top:1.2rem; }
-  .c-item { display:flex; align-items:center; gap:1rem; }
-  .c-icon { width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0; }
-  .ci1{ background:#E14153; } .ci2{ background:#FFC303; }
-  .c-item a { text-decoration:underline; color:var(--dark); font-size:.9rem; }
-  .c-item a:hover { color:var(--red); }
-  .form { display:flex; flex-direction:column; gap:1rem; }
-  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-  .fg { display:flex; flex-direction:column; gap:.38rem; }
-  .fg label { font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#666; }
-  .fg input, .fg textarea, .fg select { padding:.72rem 1rem; border-radius:10px; border:1.5px solid #ddd; background:#fff; font-family:'DM Sans',sans-serif; font-size:.9rem; color:var(--dark); outline:none; transition:border-color .2s; }
-  .fg input:focus,.fg textarea:focus,.fg select:focus { border-color:var(--blue); }
-  .fg textarea { resize:vertical; min-height:115px; }
-  .btn-send { padding:.88rem 2.2rem; border-radius:100px; background:var(--dark); color:#fff; font-family:'DM Sans',sans-serif; font-size:.88rem; font-weight:500; border:none; cursor:pointer; align-self:flex-start; transition:background .2s, transform .2s; }
-  .btn-send:hover { background:var(--black); transform:translateY(-2px); }
-  
-  /*Cookiebar*/
-    #cookie-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #1a1a1a;
-    color: #eee;
+  #contatti { background: var(--light); }
+  .contatti-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .c-info { display: flex; flex-direction: column; gap: 1.3rem; margin-top: 1.2rem; }
+  .c-item { display: flex; align-items: center; gap: 1rem; }
+  .c-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  .ci1 { background: #E14153; }
+  .ci2 { background: #FFC303; }
+  .c-item a { text-decoration: underline; color: var(--dark); font-size: .9rem; }
+  .c-item a:hover { color: var(--red); }
+  .form { display: flex; flex-direction: column; gap: 1rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fg { display: flex; flex-direction: column; gap: .38rem; }
+  .fg label { font-size: .74rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #666; }
+  .fg input, .fg textarea, .fg select { padding: .72rem 1rem; border-radius: 10px; border: 1.5px solid #ddd; background: #fff; font-family: 'DM Sans', sans-serif; font-size: .9rem; color: var(--dark); outline: none; transition: border-color .2s; }
+  .fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--blue); }
+  .fg textarea { resize: vertical; min-height: 115px; }
+  .btn-send { padding: .88rem 2.2rem; border-radius: 100px; background: var(--dark); color: #fff; font-family: 'DM Sans', sans-serif; font-size: .88rem; font-weight: 500; border: none; cursor: pointer; align-self: flex-start; transition: background .2s, transform .2s; }
+  .btn-send:hover { background: var(--black); transform: translateY(-2px); }
+
+  /* ── COOKIE BAR ── */
+  #cookie-bar {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #1a1a1a; color: #eee;
     padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    font-size: .85rem;
-    z-index: 9999;
-    flex-wrap: wrap;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; font-size: .85rem; z-index: 9999; flex-wrap: wrap;
   }
-  #cookie-bar p { margin: 0; line-height: 1.5; color: #fff;}
+  #cookie-bar p { margin: 0; line-height: 1.5; color: #fff; }
   #cookie-bar a { color: #ab7ffb; text-decoration: underline; }
-  #cookie-bar button {
-    background: #fff;
-    color: #1a1a1a;
-    border: none;
-    padding: .5rem 1.4rem;
-    border-radius: 100px;
-    font-weight: 700;
-    cursor: pointer;
-    white-space: nowrap;
-    font-size: .85rem;
-  }
+  #cookie-bar button { background: #fff; color: #1a1a1a; border: none; padding: .5rem 1.4rem; border-radius: 100px; font-weight: 700; cursor: pointer; white-space: nowrap; font-size: .85rem; }
   #cookie-bar.hidden { display: none; }
 
   /* ── FOOTER ── */
-  footer { background:var(--dark); color:#fff; padding:3rem 2rem; text-align:center; }
-  .f-logo { font-family:'Playfair Display',serif; font-size:1.5rem; letter-spacing:.14em; margin-bottom:.4rem; }
-  .f-dots { display:flex; gap:.45rem; justify-content:center; margin-bottom:1.2rem; }
-  .f-dots span { width:11px;height:11px;border-radius:50%;display:inline-block; }
-  footer p { color:#777; font-size:.8rem; }
-  .f-links { display:flex; gap:1.5rem; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
-  .f-links a { color:#777; font-size:.78rem; text-decoration:none; transition:color .2s; }
-  .f-links a:hover { color:#fff; }
+  footer { background: var(--dark); color: #fff; padding: 3rem 2rem; text-align: center; }
+  footer p { color: #777; font-size: .8rem; }
+  .f-links { display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+  .f-links a { color: #777; font-size: .78rem; text-decoration: none; transition: color .2s; }
+  .f-links a:hover { color: #fff; }
 
   /* ── RESPONSIVE ── */
-  @media(max-width:900px) {
-    .prodotti-grid { grid-template-columns:1fr; }
-    .steps { grid-template-columns:1fr 1fr; }
-    .steps::before { display:none; }
-    .testi-grid { grid-template-columns:1fr; }
+  @media (max-width: 900px) {
+    .prodotti-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .testi-grid { grid-template-columns: 1fr; }
   }
-  @media(max-width:768px) {
-    nav ul { display:none; }
-    nav { justify-content:center; }
-    .nav-logo-text { display:none; }
-    .chi-grid,.contatti-grid { grid-template-columns:1fr; }
-    .feed-grid { grid-template-columns:repeat(2,1fr); }
-    .form-row { grid-template-columns:1fr; }
-    .steps { grid-template-columns:1fr 1fr; }
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    nav { justify-content: center; }
+    .chi-grid, .contatti-grid { grid-template-columns: 1fr; }
+    .feed-grid { grid-template-columns: repeat(2, 1fr); }
+    .form-row { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
   }
-  @media(max-width:480px) {
-    .steps { grid-template-columns:1fr; }
+  @media (max-width: 480px) {
+    .steps { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -391,12 +300,11 @@
       <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGl2ZWxsb18yIiBkYXRhLW5hbWU9IkxpdmVsbG8gMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgODA0LjA1IDE4OC40MSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2ZmYzMwMDsKICAgICAgfQoKICAgICAgLmNscy0yIHsKICAgICAgICBmaWxsOiAjMDhiMDgyOwogICAgICB9CgogICAgICAuY2xzLTMgewogICAgICAgIGZpbGw6ICMyOTc5ZmY7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgZmlsbDogI2UwNDE1MzsKICAgICAgfQoKICAgICAgLmNscy01IHsKICAgICAgICBmaWxsOiAjYWI3ZmZiOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8ZyBpZD0iTGl2ZWxsb18xLTIiIGRhdGEtbmFtZT0iTGl2ZWxsbyAxIj4KICAgIDxnPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0wLDE4NC41NlYwaDU5LjczYzEuNDUsMCw0LjQ0LjA0LDguOTcuMTMsNC41My4wOSw4Ljg4LjM5LDEzLjA3LjksMTQuODcsMS43OSwyNy40Nyw2Ljk3LDM3LjgxLDE1LjUxczE4LjIsMTkuNCwyMy41OCwzMi41NSw4LjA4LDI3LjU2LDguMDgsNDMuMTktMi42OSwzMC4wNC04LjA4LDQzLjE5Yy01LjM4LDEzLjE2LTEzLjI0LDI0LjAyLTIzLjU4LDMyLjU2LTEwLjM0LDguNTQtMjIuOTQsMTMuNzEtMzcuODEsMTUuNTEtNC4xOS41Mi04LjU1LjgxLTEzLjA3LjktNC41My4wOS03LjUyLjEzLTguOTcuMTNIMFoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzMyLjIyLDB2MTE1LjM1YzAsMTQuNzktMy4xNiwyNy42NC05LjQ4LDM4LjU4LTYuMzIsMTAuOTQtMTUuMTIsMTkuNDItMjYuNCwyNS40NS0xMS4yOCw2LjAyLTI0LjM1LDkuMDMtMzkuMjIsOS4wM3MtMjcuOTQtMy4wMS0zOS4yMi05LjAzYy0xMS4yOC02LjAyLTIwLjA4LTE0LjUtMjYuNC0yNS40NS02LjMzLTEwLjk0LTkuNDktMjMuNzktOS40OS0zOC41OFYuMjYiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy00IiBkPSJNMzQ3LjYsMTg0LjU2TDQwMy45OSwwaDUyLjA0bDU2LjM5LDE4NC41NmgtMTY0LjgzWiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik01MzUuNSwxODQuNTZWMGgzMS4yN2w2MS4wMSwxMjIuNTNMNjg4Ljc5LDBoMzEuMjd2MTg0LjU2Ii8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtNSIgZD0iTTc1OC41MSwxODQuNTZWMGg0NS41NXYxODQuNTZoLTQ1LjU1WiIvPgogICAgPC9nPgogIDwvZz4KPC9zdmc+" alt="Duami Lab">
     </a>
   </div>
-  </div>
   <ul>
-    <li><a href="#chi-siamo">Chi Siamo</a></li>
     <li><a href="#prodotti">Prodotti</a></li>
     <li><a href="#processo">Come Lavoriamo</a></li>
     <li><a href="#feed">Instagram</a></li>
+    <li><a href="#chi-siamo">Chi Siamo</a></li>
     <li><a href="#contatti" class="nav-cta">Contattaci</a></li>
   </ul>
 </nav>
@@ -404,38 +312,27 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-shapes">
-    <!-- D — blu -->
     <svg class="geo-d" viewBox="0 0 151 185" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,184.56V0h59.73c1.45,0,4.44.04,8.97.13,4.53.09,8.88.39,13.07.9,14.87,1.79,27.47,6.97,37.81,15.51s18.2,19.4,23.58,32.55,8.08,27.56,8.08,43.19-2.69,30.04-8.08,43.19c-5.38,13.16-13.24,24.02-23.58,32.56-10.34,8.54-22.94,13.71-37.81,15.51-4.19.52-8.55.81-13.07.9-4.53.09-7.52.13-8.97.13H0Z"/>
     </svg>
-  
-    <!-- U — giallo -->
     <svg class="geo-u" viewBox="0 0 151 189" xmlns="http://www.w3.org/2000/svg">
       <path d="M150.22,0v115.35c0,14.79-3.16,27.64-9.48,38.58-6.32,10.94-15.12,19.42-26.4,25.45-11.28,6.02-24.35,9.03-39.22,9.03s-27.94-3.01-39.22-9.03c-11.28-6.02-20.08-14.5-26.4-25.45C3.16,143,0,130.14,0,115.35V.26"/>
     </svg>
-  
-    <!-- A — rosso -->
     <svg class="geo-a" viewBox="0 0 165 185" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,184.56L56.39,0h52.04l56.39,184.56H0Z"/>
     </svg>
-  
-    <!-- M — verde -->
     <svg class="geo-m" viewBox="0 0 185 185" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,184.56V0h31.27l61.01,122.53L153.29,0h31.27v184.56"/>
     </svg>
-  
-    <!-- I — viola -->
     <svg class="geo-i" viewBox="0 0 46 185" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,184.56V0h45.55v184.56H0Z"/>
     </svg>
   </div>
-  
+
   <div class="hero-logo-text">
     <span class="hero-logo-duami">Duami</span>
     <span class="hero-logo-lab">Lab</span>
   </div>
-  <br>
-
   <h1 class="hero-h1">Il <em style="font-style:italic;color:#7C3AED;background:rgba(124,58,237,.10);border-radius:4px;padding:0 .15em">laboratorio</em> dove<br>i tuoi regali prendono forma.</h1>
   <p class="hero-sub">Fatto a mano, senza confini creativi — cucito, ricamo, ceramiche e Kokedama per regali davvero unici.</p>
   <div class="hero-cta">
@@ -446,6 +343,135 @@
     <span>Scorri</span>
     <span class="arrow">↓</span>
   </div>
+</section>
+
+<!-- PRODOTTI -->
+<section id="prodotti">
+  <div class="container">
+    <p class="label">I Nostri Prodotti</p>
+    <h2 class="sec-title">Ogni pezzo, un'opera <em style="font-style:italic;color:#92400E;background:#FFEDC2;border-radius:4px;padding:0 .15em">unica</em>.</h2>
+    <p class="sec-body">Esplora le nostre categorie. Tutto è personalizzabile, basta chiedere!</p>
+    <div class="prodotti-grid">
+
+      <div class="prod-card">
+        <img src="https://raw.githubusercontent.com/duamilab/duamilab.github.io/main/img/Pochette-aperta.png" alt="Pochette fatta a mano" class="prod-img">
+        <div class="prod-body">
+          <p class="prod-cat pc-yellow">Cucito Creativo</p>
+          <h3>Cucito &amp; Accessori Tessili</h3>
+          <p>Borse, tote bag, pochette, borselli e molto altro. Ogni pezzo nasce da stoffe selezionate con cura, cucito a mano con attenzione ai dettagli e finiture personalizzabili. Dal casual all'elegante, creiamo quello che hai in mente.</p>
+          <span class="prod-tag">Personalizzabile</span>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <img src="https://raw.githubusercontent.com/duamilab/duamilab.github.io/main/img/Tshirt-fiori.png" alt="T-shirt ricamata con fiori" class="prod-img">
+        <div class="prod-body">
+          <p class="prod-cat pc-purple">Ricamo a Mano</p>
+          <h3>Ricamo &amp; Decorazioni</h3>
+          <p>Punto dopo punto, nasce qualcosa di irripetibile. Ricamiamo su cuscini, cornici, abiti, borse e qualsiasi superficie tessile. Possiamo riprodurre nomi, date, illustrazioni o creare soggetti completamente originali su commissione.</p>
+          <span class="prod-tag">Su commissione</span>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <img src="https://raw.githubusercontent.com/duamilab/duamilab.github.io/main/img/Tazzine.png" alt="Tazzine in ceramica artigianale" class="prod-img">
+        <div class="prod-body">
+          <p class="prod-cat pc-blue">Ceramiche</p>
+          <h3>Ceramiche &amp; Oggetti</h3>
+          <p>Tazze, ciotole, vasi e oggetti decorativi. Impastiamo, modelliamo e dipingiamo ogni pezzo a mano con smalti e colori scelti insieme a te. Nessun pezzo è identico a un altro — è questa la magia dell'artigianato.</p>
+          <span class="prod-tag">Artigianale</span>
+        </div>
+      </div>
+
+      <div class="prod-card">
+        <div class="prod-img-grid">
+          <img src="https://raw.githubusercontent.com/duamilab/duamilab.github.io/main/img/Kokedama-rosa.jpeg" alt="Kokedama rosa" class="prod-img">
+          <img src="https://raw.githubusercontent.com/duamilab/duamilab.github.io/main/img/kokedama-lilla.jpeg" alt="Kokedama lilla" class="prod-img prod-img-bottom">
+        </div>
+        <div class="prod-body">
+          <p class="prod-cat pc-green">Kokedama</p>
+          <h3>Kokedama — L'Arte Giapponese delle Piante</h3>
+          <p>Piante vive avvolte in sfere di muschio — da posare su un tavolo o appendere al soffitto. Ogni kokedama è realizzato su misura scegliendo la pianta più adatta all'ambiente. Un regalo verde, vivente e meraviglioso.</p>
+          <span class="prod-tag">Regalo speciale</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COME LAVORIAMO -->
+<section id="processo">
+  <div class="container">
+    <p class="label">Come Lavoriamo</p>
+    <h2 class="sec-title">Dal sogno al <em style="font-style:italic;color:var(--green);background:rgba(5,150,105,.10);border-radius:4px;padding:0 .15em">regalo perfetto</em>.</h2>
+    <p class="sec-body">Ogni richiesta è un percorso creativo che faremo insieme. Come funziona?</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">Step 01</div>
+        <div class="step-icon">✉️</div>
+        <h3>Raccontaci l'idea</h3>
+        <p>Scrivici la tua idea, le preferenze, l'occasione e per chi stai preparando il regalo.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 02</div>
+        <div class="step-icon">✏️</div>
+        <h3>Progettiamo insieme</h3>
+        <p>Decidiamo i materiali, i colori e le dimensioni, per un risultato unico.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 03</div>
+        <div class="step-icon">🤲</div>
+        <h3>Creiamo con cura</h3>
+        <p>Le nostre mani danno vita al progetto. Ti aggiorniamo con foto durante la lavorazione.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">Step 04</div>
+        <div class="step-icon">📦</div>
+        <h3>Spediamo</h3>
+        <p>Il tuo pezzo unico arriva confezionato con cura, pronto per stupire chi lo riceverà.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEED IG -->
+<section id="feed">
+  <div class="container">
+    <div class="feed-top">
+      <div>
+        <p class="label">Instagram Feed</p>
+        <h2 class="sec-title">Dal nostro <em style="font-style:italic;color:#1D6FD8;background:rgba(29,111,216,.10);border-radius:4px;padding:0 .15em">laboratorio</em>.</h2>
+      </div>
+      <a href="https://www.instagram.com/duamilab/" target="_blank" class="btn btn-outline">Vedi tutto →</a>
+      <behold-widget feed-id="C1xSKoowV5ozZHsspWBI"></behold-widget>
+      <script>
+        (() => {
+          const s = document.createElement('script');
+          s.type = 'module';
+          s.src = 'https://w.behold.so/widget.js';
+          document.head.append(s);
+        })();
+      </script>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="https://www.instagram.com/duamilab/" target="_blank" class="ig-btn" style="font-size:.88rem;">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Vai al nostro profilo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- IG CTA -->
+<section id="ig-cta">
+  <p class="label">Ultime Creazioni</p>
+  <h2 class="sec-title">Vedi i nostri lavori personalizzati su Instagram!</h2>
+  <p>Ogni settimana pubblichiamo nuove creazioni e il dietro le quinte del laboratorio.</p>
+  <a href="https://www.instagram.com/duamilab/" target="_blank" class="ig-btn">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    Seguici su @duamilab
+  </a>
 </section>
 
 <!-- CHI SIAMO -->
@@ -468,144 +494,7 @@
         <a href="#contatti" class="btn btn-outline" style="margin-top:2rem;display:inline-block">Scrivici ✉️</a>
       </div>
       <div class="chi-photo">
-        <img src="https://raw.githubusercontent.com/duamilab/duamilab.github.io/main/img/Founder.jpeg" 
-             alt="Alessandra e Martina - founder"
-             style="width:100%; height:100%; object-fit:cover; display:block;">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODOTTI -->
-<section id="prodotti">
-</svg>
-  <div class="container">
-    <p class="label">I Nostri Prodotti</p>
-    <h2 class="sec-title">Ogni pezzo, un'opera <em style="font-style:italic;color:#92400E;background:#FFEDC2;border-radius:4px;padding:0 .15em">unica</em>.</h2>
-    <p class="sec-body">Esplora le nostre categorie. Tutto è personalizzabile, basta chiedere!</p>
-    <div class="prodotti-grid">
-      <!-- CUCITO -->
-      <div class="prod-card">
-        <img src="https://github.com/duamilab/duamilab.github.io/blob/main/img/Pochette.png" alt="Pochette fatte a mano" class="prod-img">
-        <div class="prod-body">
-          <p class="prod-cat pc-yellow">Cucito Creativo</p>
-          <h3>Cucito &amp; Accessori Tessili</h3>
-          <p>Borse, tote bag, pochette, borselli e molto altro. Ogni pezzo nasce da stoffe selezionate con cura, cucito a mano con attenzione ai dettagli e finiture personalizzabili. Dal casual all'elegante, creiamo quello che hai in mente.</p>
-          <span class="prod-tag">Personalizzabile</span>
-        </div>
-      </div>
-
-      <!-- RICAMO -->
-      <div class="prod-card">
-        <div class="prod-img-placeholder">
-          <span class="pi-emoji">🪡</span>
-          <span class="pi-label">Foto in arrivo su Instagram!</span>
-        </div>
-        <div class="prod-body">
-          <p class="prod-cat pc-purple">Ricamo a Mano</p>
-          <h3>Ricamo &amp; Decorazioni</h3>
-          <p> Punto dopo punto, nasce qualcosa di irripetibile. Ricamiamo su cuscini, cornici, abiti, borse e qualsiasi superficie tessile. Possiamo riprodurre nomi, date, illustrazioni o creare soggetti completamente originali su commissione.</p>
-          <span class="prod-tag">Su commissione</span>
-        </div>
-      </div>
-
-      <!-- CERAMICHE -->
-      <div class="prod-card">
-        <img src="https://github.com/duamilab/duamilab.github.io/blob/main/img/Ceramica.jpeg" alt="Ceramiche artigianali" class="prod-img">
-        <div class="prod-body">
-          <p class="prod-cat pc-blue">Ceramiche</p>
-          <h3>Ceramiche &amp; Oggetti</h3>
-          <p>Tazze, ciotole, vasi e oggetti decorativi. Impastiamo, modelliamo e dipingiamo ogni pezzo a mano con smalti e colori scelti insieme a te. Nessun pezzo è identico a un altro — è questa la magia dell'artigianato.</p>
-          <span class="prod-tag">Artigianale</span>
-        </div>
-      </div>
-
-      <!-- KOKEDAMA -->
-      <div class="prod-card">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-          <img src="https://github.com/duamilab/duamilab.github.io/blob/main/img/Kokedama-rosa.jpeg" alt="Pianta Kokedama" class="prod-img"> 
-          <img src="https://github.com/duamilab/duamilab.github.io/blob/main/img/Kokedama-lilla.jpeg" alt="Pianta Kokedama" class="prod-img"> 
-        </div>
-        <div class="prod-body">
-          <p class="prod-cat pc-green">Kokedama</p>
-          <h3>Kokedama — L'Arte Giapponese delle Piante</h3>
-          <p>Piante vive avvolte in sfere di muschio — da posare su un tavolo o appendere al soffitto. Ogni kokedama è realizzato su misura scegliendo la pianta più adatta all'ambiente. Un regalo verde, vivente e meraviglioso.</p>
-          <span class="prod-tag">Regalo speciale</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- IG CTA -->
-<section id="ig-cta">
-  <div class="ig-glow"></div>
-  <p class="label">Ultime Creazioni</p>
-  <h2 class="sec-title">Vedi i nostri lavori personalizzati su Instagram!</h2>
-  <p class="sec-body">Ogni settimana pubblichiamo nuove creazioni e il dietro le quinte del laboratorio.</p>
-  <a href="https://www.instagram.com/duamilab/" target="_blank" class="ig-btn">
-    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    Seguici su @duamilab
-  </a>
-</section>
-
-<!-- FEED IG -->
-<section id="feed">
-  <div class="container">
-    <div class="feed-top">
-      <div>
-        <p class="label">Instagram Feed</p>
-        <h2 class="sec-title">Dal nostro <em style="font-style:italic;color:#1D6FD8;background:rgba(29,111,216,.10);border-radius:4px;padding:0 .15em">laboratorio</em>.</h2>
-      </div>
-      <a href="https://www.instagram.com/duamilab/" target="_blank" class="btn btn-outline">Vedi tutto →</a>
-      <behold-widget feed-id="C1xSKoowV5ozZHsspWBI"></behold-widget>
-      <script>
-        (() => {
-          const d=document,s=d.createElement("script");s.type="module";
-          s.src="https://w.behold.so/widget.js";d.head.append(s);
-        })();
-      </script>
-    </div>
-    <div style="text-align:center;margin-top:2.5rem;">
-      <a href="https://www.instagram.com/duamilab/" target="_blank" class="ig-btn" style="font-size:.88rem;">
-        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        Vai al nostro profilo
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- COME LAVORIAMO -->
-<section id="processo">
-  <div class="container">
-    <p class="label">Come Lavoriamo</p>
-    <h2 class="sec-title">Dal sogno al <em style="font-style:italic;color:var(--green);background:rgba(5,150,105,.10);border-radius:4px;padding:0 .15em">regalo perfetto</em>.</h2>
-    <p class="sec-body">Ogni richiesta è un percorso creativo che faremo insieme. Come funziona?</p>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-num">Step 01</div>
-          <div class="step-icon">✉️</div>
-          <h3>Raccontaci l'idea</h3>
-          <p>Scrivici la tua idea, le preferenze, l'occasione e per chi stai preparando il regalo.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">Step 02</div>
-          <div class="step-icon">✏️</div>
-          <h3>Progettiamo insieme</h3>
-          <p>Decidiamo i materiali, i colori e le dimensioni, per un risultato unico.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">Step 03</div>
-          <div class="step-icon">🤲</div>
-          <h3>Creiamo con cura</h3>
-          <p>Le nostre mani danno vita al progetto. Ti aggiorniamo con foto durante la lavorazione.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-num">Step 04</div>
-          <div class="step-icon">📦</div>
-          <h3>Spediamo</h3>
-          <p>Il tuo pezzo unico arriva confezionato con cura, pronto per stupire chi lo riceverà.</p>
-        </div>
+        <img src="https://raw.githubusercontent.com/duamilab/duamilab.github.io/main/img/Founder.jpeg" alt="Alessandra e Martina - founder">
       </div>
     </div>
   </div>
@@ -683,17 +572,15 @@
   </div>
 </section>
 
-
-
 <!-- FOOTER -->
 <footer>
   <img src="https://raw.githubusercontent.com/duamilab/duamilab.github.io/main/Logo/Full%20version-white.svg" alt="Duami Lab" style="height:6rem;margin-bottom:1.2rem;display:inline-block;">
   <p>Fatto a mano senza confini creativi ✨</p>
   <div class="f-links">
-    <a href="#chi-siamo">Chi Siamo</a>
     <a href="#prodotti">Prodotti</a>
     <a href="#processo">Come Lavoriamo</a>
     <a href="#feed">Instagram</a>
+    <a href="#chi-siamo">Chi Siamo</a>
     <a href="#contatti">Contatti</a>
   </div>
   <p style="margin-top:1.5rem;font-size:.72rem;color:#444">© 2026 Duami Lab — Tutti i diritti riservati</p>
@@ -706,13 +593,15 @@
 </div>
 
 <script>
-  (function() {
-    if (localStorage.getItem('cookie-ok')) {
-      document.getElementById('cookie-bar').classList.add('hidden');
-    }
-    document.getElementById('cookie-ok').addEventListener('click', function() {
+  (() => {
+    const bar = document.getElementById('cookie-bar');
+    if (localStorage.getItem('cookie-ok')) bar.classList.add('hidden');
+    document.getElementById('cookie-ok').addEventListener('click', () => {
       localStorage.setItem('cookie-ok', '1');
-      document.getElementById('cookie-bar').classList.add('hidden');
+      bar.classList.add('hidden');
     });
   })();
 </script>
+
+</body>
+</html>
